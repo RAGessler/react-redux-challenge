@@ -15,9 +15,9 @@ interface RestaurantPickerState {
 
 const initialState: RestaurantPickerState = {
   restaurants: [
-    { id: "1", name: "Pizza Palace", cuisine: "Italian", rating: 4.5 },
-    { id: "2", name: "Sushi Zen", cuisine: "Japanese", rating: 4.8 },
-    { id: "3", name: "Burger Barn", cuisine: "American", rating: 4.2 },
+    { id: "0", name: "Pizza Palace", cuisine: "Italian", rating: 4.5 },
+    { id: "1", name: "Sushi Zen", cuisine: "Japanese", rating: 4.8 },
+    { id: "2", name: "Burger Barn", cuisine: "American", rating: 4.2 },
   ],
   selectedRestaurant: null,
   isSpinning: false,
@@ -30,7 +30,7 @@ const restaurantPickerSlice = createSlice({
     addRestaurant: (state, action: PayloadAction<Omit<Restaurant, "id">>) => {
       const newRestaurant: Restaurant = {
         ...action.payload,
-        id: Date.now().toString(),
+        id: state.restaurants.length.toString(),
       };
       state.restaurants.push(newRestaurant);
     },
@@ -53,7 +53,6 @@ const restaurantPickerSlice = createSlice({
     clearSelection: (state) => {
       state.selectedRestaurant = null;
     },
-    // TODO: Interns should add a reducer to update restaurant rating
   },
 });
 
