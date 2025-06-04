@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import { removeRestaurant } from "../store/restaurantPickerSlice.ts";
 import { RootState } from "../store";
 
 const RestaurantList = () => {
@@ -7,10 +6,6 @@ const RestaurantList = () => {
   const { restaurants } = useSelector(
     (state: RootState) => state.restaurantPicker
   );
-
-  const handleRemoveRestaurant = (restaurantId) => {
-    dispatch(removeRestaurant(restaurantId));
-  };
 
   return (
     <div
@@ -49,8 +44,9 @@ const RestaurantList = () => {
                   {restaurant.cuisine} • ⭐ {restaurant.rating}/5
                 </p>
               </div>
-              <button
-                onClick={() => handleRemoveRestaurant(restaurant.id)}
+              {/* For an extra challenge, create a button that removes the specific restaurant */}
+              {/* <button
+                onClick={ logic to remove restuarant here}
                 style={{
                   backgroundColor: "#f44336",
                   color: "white",
@@ -61,7 +57,7 @@ const RestaurantList = () => {
                 }}
               >
                 Remove
-              </button>
+              </button> */}
             </div>
           ))}
         </div>

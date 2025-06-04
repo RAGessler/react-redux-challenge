@@ -27,17 +27,13 @@ const restaurantPickerSlice = createSlice({
   name: "restaurantPicker",
   initialState,
   reducers: {
+    //Hint: Use this reducer to add a new restaurant
     addRestaurant: (state, action: PayloadAction<Omit<Restaurant, "id">>) => {
       const newRestaurant: Restaurant = {
         ...action.payload,
         id: state.restaurants.length.toString(),
       };
       state.restaurants.push(newRestaurant);
-    },
-    removeRestaurant: (state, action: PayloadAction<string>) => {
-      state.restaurants = state.restaurants.filter(
-        (restaurant) => restaurant.id !== action.payload
-      );
     },
     selectRandomRestaurant: (state) => {
       if (state.restaurants.length > 0) {
@@ -58,7 +54,6 @@ const restaurantPickerSlice = createSlice({
 
 export const {
   addRestaurant,
-  removeRestaurant,
   selectRandomRestaurant,
   setSpinning,
   clearSelection,

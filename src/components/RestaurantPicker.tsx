@@ -7,6 +7,7 @@ import {
 import { RootState } from "../store";
 
 const RestaurantPicker = () => {
+  //Initializing the dispatch hook
   const dispatch = useDispatch();
 
   const { selectedRestaurant, isSpinning, restaurants } = useSelector(
@@ -21,7 +22,6 @@ const RestaurantPicker = () => {
 
     dispatch(setSpinning(true));
 
-    // Simulate spinning animation
     setTimeout(() => {
       dispatch(selectRandomRestaurant());
       dispatch(setSpinning(false));

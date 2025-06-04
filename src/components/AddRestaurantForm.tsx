@@ -1,12 +1,12 @@
 import { useState } from "react";
 // TODO: Import useDispatch from react-redux
-// TODO: Import addRestaurant action from '../../store/restaurantPickerSlice'
+// TODO: Import addRestaurant action
 
 const AddRestaurantForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     cuisine: "",
-    rating: 5,
+    rating: 0,
   });
 
   // TODO: Initialize dispatch hook
@@ -34,7 +34,7 @@ const AddRestaurantForm = () => {
     setFormData({
       name: "",
       cuisine: "",
-      rating: 5,
+      rating: 0,
     });
 
     console.log("Restaurant added:", formData);
