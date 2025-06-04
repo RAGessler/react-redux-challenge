@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Restaurant Picker - React Redux Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A hands-on learning exercise for interns to master React and Redux Toolkit fundamentals.
 
-## Available Scripts
+## 🎯 Learning Objectives
 
-In the project directory, you can run:
+- React functional components and hooks
+- Redux Toolkit setup and configuration
+- State management with createSlice
+- Connecting React components to Redux
+- TypeScript integration with Redux
 
-### `npm start`
+## 📋 Lab Tasks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Phase 1: Complete AddRestaurantForm Component
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**File:** `src/components/AddRestaurantForm.tsx`
 
-### `npm test`
+1. Import `useDispatch` from `react-redux`
+2. Import `addRestaurant` action from `../store`
+3. Initialize dispatch hook
+4. Implement form submission
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```typescript
+import { useDispatch } from "react-redux";
+import { addRestaurant, AppDispatch } from "../store";
 
-### `npm run build`
+const dispatch = useDispatch<AppDispatch>();
+dispatch(addRestaurant(formData));
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Phase 2: Connect to App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**File:** `src/components/App/App.js`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Import `AddRestaurantForm` component
+2. Add component where TODO comment indicates
 
-### `npm run eject`
+### Phase 3: Bonus Challenge
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+add a button to remove a selected restaurant
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ✅ Completion Checklist
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [ ] Form adds restaurants to Redux store
+- [ ] Restaurant list updates in real-time
+- [ ] Random picker works with new restaurants
+- [ ] No console errors
+- [ ] TypeScript compiles without errors
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🐛 Common Issues
 
-## Learn More
+- **State not updating** - Check dispatch is called correctly
+- **TypeScript errors** - Verify imports and type annotations
+- **Form not submitting** - Ensure preventDefault() is called
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Good luck! 🚀
