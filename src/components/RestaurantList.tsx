@@ -45,19 +45,6 @@ const RestaurantList = () => {
                 </p>
               </div>
               {/* For an extra challenge, create a button that removes the specific restaurant */}
-              {/* <button
-                onClick={ logic to remove restuarant here}
-                style={{
-                  backgroundColor: "#f44336",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "5px",
-                  padding: "8px 12px",
-                  cursor: "pointer",
-                }}
-              >
-                Remove
-              </button> */}
             </div>
           ))}
         </div>
