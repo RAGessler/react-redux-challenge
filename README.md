@@ -25,7 +25,7 @@ A hands-on learning exercise for interns to master React and Redux Toolkit funda
 import { useDispatch } from "react-redux";
 import { addRestaurant, AppDispatch } from "../store";
 
-const dispatch = useDispatch<AppDispatch>();
+const dispatch = useDispatch(useAppDispatch());
 dispatch(addRestaurant(formData));
 ```
 
